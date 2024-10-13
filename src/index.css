@@ -1,0 +1,56 @@
+*, ::before, ::after {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+#board {
+	width: 100vw;
+	height: 100vh;
+	border: 5px solid orange;
+	cursor: pointer;
+	position: relative;
+}
+
+.circle {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	position: absolute;
+	animation: bounce 0.2s ease-in-out forwards;
+}
+
+.controls {
+	display: flex;
+	gap: 4px;
+	margin: 10px;
+}
+
+.controls button {
+	border: 0;
+	padding: 10px 15px;
+	background-color: #2eec71;
+	color: white;
+	border-radius: 4px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
+
+.controls button:active {
+	transform: scale(0.9);
+}
+
+.controls button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+@keyframes bounce {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
+}
